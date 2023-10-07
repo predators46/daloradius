@@ -34,7 +34,7 @@ CREATE TABLE `batch_history` (
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`),
   KEY `batch_name` (`batch_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -77,7 +77,7 @@ CREATE TABLE `billing_history` (
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`),
   KEY `username` (`username`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -136,7 +136,7 @@ CREATE TABLE `billing_merchant` (
   `payer_status` varchar(200) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `username` (`username`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -187,7 +187,7 @@ CREATE TABLE `billing_paypal` (
   `payer_status` varchar(200) default NULL,
   PRIMARY KEY  (`id`),
   KEY `username` (`username`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -235,7 +235,7 @@ CREATE TABLE `billing_plans` (
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`),
   KEY `planName` (`planName`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -259,7 +259,7 @@ CREATE TABLE `billing_plans_profiles` (
   `plan_name` varchar(128) NOT NULL COMMENT 'the name of the plan',
   `profile_name` varchar(256) default NULL COMMENT 'the profile/group name',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -289,7 +289,7 @@ CREATE TABLE `billing_rates` (
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`),
   KEY `rateName` (`rateName`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -316,7 +316,7 @@ CREATE TABLE `cui` (
   `creationdate` timestamp NOT NULL default CURRENT_TIMESTAMP,
   `lastaccounting` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`username`,`clientipaddress`,`callingstationid`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -347,7 +347,7 @@ CREATE TABLE `dictionary` (
   `RecommendedHelper` varchar(32) default NULL,
   `RecommendedTooltip` varchar(512) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9718 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9718 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -392,7 +392,7 @@ CREATE TABLE `hotspots` (
   PRIMARY KEY  (`id`),
   KEY `name` (`name`),
   KEY `mac` (`mac`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -424,7 +424,7 @@ CREATE TABLE `invoice` (
   `updatedate` datetime default '0000-00-00 00:00:00',
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -456,7 +456,7 @@ CREATE TABLE `invoice_items` (
   `updatedate` datetime default '0000-00-00 00:00:00',
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -484,7 +484,7 @@ CREATE TABLE `invoice_status` (
   `updatedate` datetime default '0000-00-00 00:00:00',
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -513,7 +513,7 @@ CREATE TABLE `invoice_type` (
   `updatedate` datetime default '0000-00-00 00:00:00',
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -545,7 +545,7 @@ CREATE TABLE `nas` (
   `description` varchar(200) collate utf8_unicode_ci default 'RADIUS Client',
   PRIMARY KEY  (`id`),
   KEY `nasname` (`nasname`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -617,7 +617,7 @@ CREATE TABLE `node` (
   `firmware_revision` varchar(128) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `mac` (`mac`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='node database';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='node database';
 SET character_set_client = @saved_cs_client;
 
 --
@@ -659,7 +659,7 @@ CREATE TABLE `operators` (
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`),
   KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -685,7 +685,7 @@ CREATE TABLE `operators_acl` (
   `file` varchar(128) NOT NULL,
   `access` tinyint(8) NOT NULL default '0',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=252 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=252 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -711,7 +711,7 @@ CREATE TABLE `operators_acl_files` (
   `category` varchar(128) NOT NULL,
   `section` varchar(128) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=140 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -743,7 +743,7 @@ CREATE TABLE `payment` (
   `updatedate` datetime default '0000-00-00 00:00:00',
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -771,7 +771,7 @@ CREATE TABLE `payment_type` (
   `updatedate` datetime default '0000-00-00 00:00:00',
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -803,7 +803,7 @@ CREATE TABLE `proxys` (
   `updatedate` datetime default NULL,
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -833,7 +833,9 @@ CREATE TABLE `radacct` (
   `nasportid` varchar(15) collate utf8_unicode_ci default NULL,
   `nasporttype` varchar(32) collate utf8_unicode_ci default NULL,
   `acctstarttime` datetime default NULL,
+  `acctupdatetime` datetime default NULL,
   `acctstoptime` datetime default NULL,
+  `acctinterval` int(12) default NULL,
   `acctsessiontime` int(12) default NULL,
   `acctauthentic` varchar(32) collate utf8_unicode_ci default NULL,
   `connectinfo_start` varchar(50) collate utf8_unicode_ci default NULL,
@@ -846,19 +848,28 @@ CREATE TABLE `radacct` (
   `servicetype` varchar(32) collate utf8_unicode_ci default NULL,
   `framedprotocol` varchar(32) collate utf8_unicode_ci default NULL,
   `framedipaddress` varchar(15) collate utf8_unicode_ci NOT NULL default '',
+  `framedipv6address` varchar(45) collate utf8_unicode_ci NOT NULL default '',
+  `framedipv6prefix` varchar(45) collate utf8_unicode_ci NOT NULL default '',
+  `framedinterfaceid` varchar(44) collate utf8_unicode_ci NOT NULL default '',
+  `delegatedipv6prefix` varchar(45) collate utf8_unicode_ci NOT NULL default '',
   `acctstartdelay` int(12) default NULL,
   `acctstopdelay` int(12) default NULL,
   `xascendsessionsvrkey` varchar(10) collate utf8_unicode_ci default NULL,
   PRIMARY KEY  (`radacctid`),
   KEY `username` (`username`),
   KEY `framedipaddress` (`framedipaddress`),
+  KEY `framedipv6address` (`framedipv6address`),
+  KEY `framedipv6prefix` (`framedipv6prefix`),
+  KEY `framedinterfaceid` (`framedinterfaceid`),
+  KEY `delegatedipv6prefix` (`delegatedipv6prefix`),
   KEY `acctsessionid` (`acctsessionid`),
   KEY `acctsessiontime` (`acctsessiontime`),
   KEY `acctuniqueid` (`acctuniqueid`),
   KEY `acctstarttime` (`acctstarttime`),
+  KEY `acctinterval` (`acctinterval`),
   KEY `acctstoptime` (`acctstoptime`),
   KEY `nasipaddress` (`nasipaddress`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -885,7 +896,7 @@ CREATE TABLE `radcheck` (
   `value` varchar(253) collate utf8_unicode_ci NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `username` (`username`(32))
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -912,7 +923,7 @@ CREATE TABLE `radgroupcheck` (
   `value` varchar(253) collate utf8_unicode_ci NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `groupname` (`groupname`(32))
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -940,7 +951,7 @@ CREATE TABLE `radgroupreply` (
   `value` varchar(253) collate utf8_unicode_ci NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `groupname` (`groupname`(32))
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -966,7 +977,7 @@ CREATE TABLE `radhuntgroup` (
   `nasportid` varchar(15) default NULL,
   PRIMARY KEY  (`id`),
   KEY `nasipaddress` (`nasipaddress`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -1025,7 +1036,7 @@ CREATE TABLE `radpostauth` (
   `reply` varchar(32) collate utf8_unicode_ci NOT NULL default '',
   `authdate` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -1052,7 +1063,7 @@ CREATE TABLE `radreply` (
   `value` varchar(253) collate utf8_unicode_ci NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `username` (`username`(32))
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -1076,7 +1087,7 @@ CREATE TABLE `radusergroup` (
   `groupname` varchar(64) collate utf8_unicode_ci NOT NULL default '',
   `priority` int(11) NOT NULL default '1',
   KEY `username` (`username`(32))
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -1111,7 +1122,7 @@ CREATE TABLE `realms` (
   `updatedate` datetime default NULL,
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -1173,7 +1184,7 @@ CREATE TABLE `userbillinfo` (
   PRIMARY KEY  (`id`),
   KEY `username` (`username`),
   KEY `planname` (`planName`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -1218,7 +1229,7 @@ CREATE TABLE `userinfo` (
   `updateby` varchar(128) default NULL,
   PRIMARY KEY  (`id`),
   KEY `username` (`username`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -1247,7 +1258,7 @@ CREATE TABLE `wimax` (
   PRIMARY KEY  (`id`),
   KEY `username` (`username`),
   KEY `spi` (`spi`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 SET character_set_client = @saved_cs_client;
 
 --
